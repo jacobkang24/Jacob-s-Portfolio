@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+WRITTEN BY: Jacob Kang
+EMAIL: jacobhk1@uci.edu
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jacob Kang">
+  <meta name="description" content="Portfolio of Jacob Kang, a 4th year Informatics student at UCI specializing in Product Management and Data Analytics">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Jacob Kang's Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.6;
+      color: gray;
+      background-color: whitesmoke;
+    }
+
+    header {
+      background: linear-gradient(135deg, blue 0%, purple 100%);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: blue;
+      font-size: 1.8rem;
+      transition: transform 0.3s, opacity 0.3s;
+      display: inline-block;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      opacity: 0.8;
+    }
+
+    nav {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: gray;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: blue;
+    }
+
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    section {
+      background: white;
+      margin: 2rem 0;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    section h2 {
+      color: blue;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: grey;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: whitesmoke;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 255, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-card h3 {
+      color: blue;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .project-card p {
+      color: grey;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: blue;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-weight: 600;
+    }
+
+    .project-link:hover {
+      background: purple;
+    }
+
+    #contact p {
+      text-align: center;
+      color: grey;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      background: whitesmoke;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-item i {
+      font-size: 2.5rem;
+      color: blue;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item h3 {
+      color: gray;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      color: grey;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: blue;
+    }
+
+    .social-section {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: whitesmoke;
+      border-radius: 10px;
+    }
+
+    .social-section h3 {
+      color: blue;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      background: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    footer p {
+      color: grey;
+      margin-bottom: 0.5rem;
+    }
+
+    footer a {
+      color: blue;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        border-bottom: 1px solid whitesmoke;
+      }
+
+      nav ul li:last-child {
+        border-bottom: none;
+      }
+
+      nav ul li a {
+        padding: 1rem;
+        display: block;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+
+      section h2 {
+        font-size: 1.8rem;
+      }
+
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 3rem 1rem;
+      }
+
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      .main {
+        padding: 1rem;
+      }
+
+      section {
+        padding: 1.5rem 1rem;
+      }
+
+      .project-card h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jacob Kang</h1>
+    <p>4th Year @ UCI | Informatics | Product Management and Data Analytics</p>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/jacob-kang-9319b2294/" aria-label="LinkedIn Profile" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/jacobkang24" aria-label="GitHub Profile" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+    </div>
+  </header>
+ 
+  <nav>
+      <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+      </ul>
+  </nav>
+
+  <div class="main">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, my name is Jacob and I am a 4th year student at UC Irvine studying Informatics with a specialization in Human Computer Interaction. I have a strong interest in product management and data analytics, as I enjoy working on projects that reflect real-world problems. Outside of my professional aspirations, some of my hobbies are playing basketball and golf, listening to music, going to the gym, and eating food.</p>
+      </section>
+
+      <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <img src="https://miro.medium.com/v2/resize:fit:1358/format:webp/1*YChA3g70ev8qSvlZY6ohVA.png" alt="Data Cleaning label with washing machine to represent the Data Cleaning Project">
+            <div class="project-content">
+              <h3>Data Cleaning in SQL</h3>
+              <p>Cleaned raw company data and transformed it in SQL Server to make it more usable for analysis. Standardized date formats, removed duplicate entries, and handled null values to improve data quality. Implemented data validation techniques and optimized queries for better performance, resulting in a clean dataset ready for comprehensive business intelligence and reporting.</p>
+              <a href="https://github.com/jacobkang24/Data-Cleaning-Project/blob/main/Data%20Cleaning%20Project.sql" class="project-link" target="_blank">View Project</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="https://st.depositphotos.com/1968353/1885/i/450/depositphotos_18852019-stock-photo-airport-terminal.jpg" alt="Airport terminal to represent the Airport Database management system">
+            <div class="project-content">
+              <h3>Airport Database Program</h3>
+              <p>Developed a Tkinter interface for users to search, add, update records, enhancing data management and retrieval efficiency. Implemented user input features, result visualization for database interaction, and maintained data integrity during updates. Connected to the database in PyCharm's Query Console to execute SQL statements for retrieving specific records, improving user experience through direct interaction with the database.</p>
+              <a href="https://github.com/jacobkang24/airport-table/tree/main/project2" class="project-link" target="_blank">View Project</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop" alt="Phone with messages to represent the Direct Messenger Program">
+            <div class="project-content">
+              <h3>Direct Messenger Program</h3>
+              <p>Developed a responsive direct messenger application in Python, focusing on user experience and security. Added contacts via a Dynamic Server Update (DSU) server to enhance user connectivity and expand networks. Ensured end-to-end encryption for messaging, profile management, and message archiving for optimized communication. Overall users are able to send and receive messages, add and manage contacts, and save messages and contacts locally on a file.</p>
+              <a href="https://github.com/jacobkang24/Direct-Messenger-Program" class="project-link" target="_blank">View Project</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out if you'd like to connect or chat!</p>
+        <div class="contact-grid">
+          
+          <aside class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Brea, CA 92823</p>
+          </aside>
+
+          <aside class="contact-item">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p><a href="tel:7147426735">(714) 742-6735</a></p>
+          </aside>
+
+          <aside class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p><a href="mailto:jacobkang399@yahoo.com">jacobkang399@yahoo.com</a></p>
+          </aside>
+
+        </div>
+
+        <div class="social-section">
+          <h3>Connect With Me</h3>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/jacob-kang-9319b2294/" aria-label="Connect on LinkedIn" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/jacobkang24" aria-label="View Github Profile" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>        
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Jacob Kang. All rights reserved.</p>
+    <p>
+      <a href="http://validator.w3.org/check?uri=referer">W3C HTML Validator</a> |
+      <a href="https://jigsaw.w3.org/css-validator/check/referer">W3C CSS Validator</a>
+    </p>
+  </footer>
+</body>
+</html>
